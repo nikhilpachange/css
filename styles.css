@@ -19,7 +19,7 @@ body {
     width: 100px;
     height: 100px;
     background: linear-gradient(45deg, #f06, transparent);
-    border-radius: 50%;
+    border-radius: 45%;
     animation: spin 3s linear infinite, bounce 1s ease infinite;
 }
 
