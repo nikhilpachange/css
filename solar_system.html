@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <style>
+        body { background-color: black; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .sun { width: 100px; height: 100px; border-radius: 50%; background-color: yellow; position: relative; }
+        .planet { width: 20px; height: 20px; border-radius: 50%; background-color: blue; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .orbit { position: absolute; border: 1px solid white; border-radius: 50%; animation: orbit 10s infinite linear; }
+        @keyframes orbit { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="sun">
+        <div class="orbit" style="width: 200px; height: 200px;">
+            <div class="planet"></div>
+        </div>
+        <div class="orbit" style="width: 300px; height: 300px; animation-duration: 20s;">
+            <div class="planet" style="background-color: red;"></div>
+        </div>
+    </div>
+</body>
+</html>
