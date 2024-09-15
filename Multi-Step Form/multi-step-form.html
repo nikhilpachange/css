@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            width: 400px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .step {
+            display: none;
+        }
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+        }
+        .step.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form id="multi-step-form">
+        <div class="step active">
+            <h2>Step 1</h2>
+            <input type="text" placeholder="First Name">
+            <input type="text" placeholder="Last Name">
+        </div>
+        <div class="step">
+            <h2>Step 2</h2>
+            <input type="email" placeholder="Email Address">
+            <input type="tel" placeholder="Phone Number">
+        </div>
+        <div class="step">
+            <h2>Step 3</h2>
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Confirm Password">
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        const steps = document.querySelectorAll('.step');
+        const form = document.getElementById('multi-step-form');
+        let currentStep = 0;
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            currentStep++;
+            if (currentStep >= steps.length) {
+                form.submit();
+            } else {
+                steps.forEach((step, index) => step.classList.toggle('active', index === currentStep));
+            }
+        });
+    </script>
+</body>
+</html>
