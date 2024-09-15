@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        "featured featured"
+        "news news";
+    grid-gap: 1rem;
+    padding: 1rem;
+}
+
+.featured {
+    grid-area: featured;
+    background: #e0e0e0;
+    padding: 1rem;
+}
+
+.news {
+    background: #ccc;
+    padding: 1rem;
+}
