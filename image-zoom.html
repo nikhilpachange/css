@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Zoom</title>
+    <style>
+        .image-container {
+            width: 300px;
+            overflow: hidden;
+            border: 5px solid #333;
+        }
+
+        img {
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/300" alt="Sample Image">
+    </div>
+</body>
+</html>
