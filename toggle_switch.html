@@ -1,0 +1,14 @@
+<html lang="en">
+<head>
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #282c34; }
+        .toggle { position: relative; width: 60px; height: 30px; background-color: #bbb; border-radius: 30px; cursor: pointer; transition: background-color 0.3s ease; }
+        .toggle:before { content: ''; position: absolute; width: 26px; height: 26px; background-color: white; border-radius: 50%; top: 2px; left: 2px; transition: transform 0.3s ease; }
+        .toggle.active { background-color: #66bb6a; }
+        .toggle.active:before { transform: translateX(30px); }
+    </style>
+</head>
+<body>
+    <div class="toggle" onclick="this.classList.toggle('active')"></div>
+</body>
+</html>
