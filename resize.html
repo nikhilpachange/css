@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Resizer</title>
+</head>
+
+<body>
+    <h1>Image Resizer</h1>
+    <form id="upload-form">
+        <input type="file" id="image-input" accept="image/*">
+    </form>
+    <div id="image-container">
+        <img id="uploaded-image" src="#" alt="Uploaded Image">
+    </div>
+    <button id="resize-button-instagram">Instagram (1080x1080)</button>
+    <button id="resize-button-facebook">Facebook (1200x630)</button>
+    <button id="resize-button-twitter">Twitter (1200x675)</button>
+    <button id="resize-button-website">Website (600x300)</button>
+
+    <script>
+        // Function to display the selected image
+        document.getElementById('image-input').addEventListener('change', function () {
+            const imageContainer = document.getElementById('image-container');
+            const uploadedImage = document.getElementById('uploaded-image');
+            const file = this.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    uploadedImage.src = e.target.result;
+                    imageContainer.style.display = 'block';
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                imageContainer.style.display = 'none';
+            }
+        });
+
+        // Function to resize the image to specific dimensions when a button is clicked
+        document.getElementById('resize-button-instagram').addEventListener('click', function () {
+            resizeImage(1080, 1080);
+        });
+
+        document.getElementById('resize-button-facebook').addEventListener('click', function () {
+            resizeImage(1200, 630);
+        });
+
+        document.getElementById('resize-button-twitter').addEventListener('click', function () {
+            resizeImage(1200, 675);
+        });
+
+        document.getElementById('resize-button-website').addEventListener('click', function () {
+            resizeImage(600, 300);
+        });
+
+        // Function to resize the image
+        function resizeImage(width, height) {
+            const uploadedImage = document.getElementById('uploaded-image');
+
+            // Set the width and height of the image
+            uploadedImage.width = width;
+            uploadedImage.height = height;
+        }
+    </script>
+</body>
+
+</html>
